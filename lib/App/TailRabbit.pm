@@ -12,7 +12,7 @@ use Path::Class qw/ file /;
 use MooseX::Types::LoadableClass qw/ LoadableClass /;
 use namespace::autoclean;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 with qw/
     MooseX::Getopt
@@ -73,9 +73,7 @@ has 'configfile' => (
 
 my $rf = Net::RabbitFoot->new(
 #        verbose => 1,
-)->load_xml_spec(
-    Net::RabbitFoot::default_amqp_spec(),
-);
+)->load_xml_spec();
 
 sub _get_mq {
     my $self = shift;
